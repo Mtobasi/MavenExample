@@ -7,8 +7,9 @@ pipeline {
     }
 
     environment {
+        PATH = "${env.PATH};c:\\Windows\\System32"
         JAVA_HOME = "${tool 'JDK11'}"
-        PATH = "${env.PATH};c:/Windows/System32;${env.JAVA_HOME}/bin"
+        PATH = "${env.JAVA_HOME}\bin:${env.PATH}"
     }
 
     stages {
