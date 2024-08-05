@@ -17,21 +17,21 @@ pipeline {
         stage('Build') {
             steps {
                 // Run Maven build
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
 
         stage('Test') {
             steps {
                 // Run Maven tests
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
                 // Package the application (e.g., create a WAR/JAR file)
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 // Deployment steps (e.g., copy the WAR file to a server)
                 // Uncomment and modify according to your deployment strategy
-                // sh 'scp target/your-app.war user@server:/path/to/deploy'
+                // bat 'scp target/your-app.war user@server:/path/to/deploy'
 
 
                 // Placeholder for deployment steps
