@@ -6,10 +6,6 @@ pipeline {
         jdk 'JDK11' // Install JDK in Jenkins and name it 'JDK11'
     }
 
-    environment {
-        // Define any environment variables here if needed
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -44,6 +40,10 @@ pipeline {
                 // Deployment steps (e.g., copy the WAR file to a server)
                 // Uncomment and modify according to your deployment strategy
                 // sh 'scp target/your-app.war user@server:/path/to/deploy'
+
+
+                // Placeholder for deployment steps
+                                echo 'Deployment step would go here.'
             }
         }
     }
