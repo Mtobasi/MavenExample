@@ -18,5 +18,6 @@ public class HelloWorldController
         model.addAttribute("message", message);
 
         return "hello";
+
     }
 }
