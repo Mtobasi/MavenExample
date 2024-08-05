@@ -22,21 +22,21 @@ pipeline {
         stage('Build') {
             steps {
                 // Run Maven build
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
 
         stage('Test') {
             steps {
                 // Run Maven tests
-                bat 'mvn test'
+                sh 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
                 // Package the application (e.g., create a WAR/JAR file)
-                bat 'mvn package'
+                sh 'mvn package'
             }
         }
 
