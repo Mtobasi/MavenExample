@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        JAVA_HOME = "${tool 'JDK11'}"
+        JAVA_HOME = ""
     }
 
     stages {
@@ -16,7 +16,7 @@ pipeline {
                 steps {
                     script {
                         // Add multiple paths to the PATH variable
-                        def additionalPaths = "c:\\Windows\\System32;${env.JAVA_HOME}\bin"
+                        def additionalPaths = "c:\\Windows\\System32;${env.JAVA_HOME}\\bin"
                         env.PATH = "${env.PATH};${additionalPaths}"
                         echo "Updated PATH: ${env.PATH}"
                     }
