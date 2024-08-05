@@ -7,9 +7,8 @@ pipeline {
     }
 
     environment {
-        env.PATH = env.PATH + ";c:\\Windows\\System32"
+        PATH = "${env.PATH};c:\\Windows\\System32;${env.JAVA_HOME}\bin"
         JAVA_HOME = "${tool 'JDK11'}"
-        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
     }
 
     stages {
@@ -23,21 +22,21 @@ pipeline {
         stage('Build') {
             steps {
                 // Run Maven build
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
 
         stage('Test') {
             steps {
                 // Run Maven tests
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
                 // Package the application (e.g., create a WAR/JAR file)
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
 
