@@ -6,6 +6,11 @@ pipeline {
         jdk 'JDK11' // Install JDK in Jenkins and name it 'JDK11'
     }
 
+    environment {
+        JAVA_HOME = "${tool 'JDK11'}"
+        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+    }
+
     stages {
         stage('Checkout') {
             steps {
