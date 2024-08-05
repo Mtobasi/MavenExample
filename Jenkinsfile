@@ -7,6 +7,7 @@ pipeline {
     }
 
     environment {
+        env.PATH = env.PATH + ";c:\\Windows\\System32"
         JAVA_HOME = "${tool 'JDK11'}"
         PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
     }
