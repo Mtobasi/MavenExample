@@ -7,12 +7,22 @@ pipeline {
     }
 
     environment {
-        PATH = "${env.PATH};c:\\Windows\\System32"
         JAVA_HOME = "${tool 'JDK11'}"
-        PATH = "${env.JAVA_HOME}\bin:${env.PATH}"
     }
 
     stages {
+
+         stage('Setup Environment') {
+                steps {
+                    script {
+                        // Add multiple paths to the PATH variable
+                        def additionalPaths = "c:\\Windows\\System32;${env.JAVA_HOME}\bin"
+                        env.PATH = "${env.PATH};${additionalPaths}"
+                        echo "Updated PATH: ${env.PATH}"
+                    }
+                }
+            }
+
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
