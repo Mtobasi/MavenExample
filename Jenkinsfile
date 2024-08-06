@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    triggers {
-        githubPush()
-    }
-
     tools {
         maven 'Maven3' // Install Maven in Jenkins and name it 'Maven3'
         jdk 'JDK11' // Install JDK in Jenkins and name it 'JDK11'
