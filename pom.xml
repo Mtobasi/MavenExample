@@ -6,6 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.TEST</groupId>
     <artifactId>MavenExample</artifactId>
+    <version>1</version>
 
     <name>Maven Example</name>
     <description>Example for Maven and git</description>
