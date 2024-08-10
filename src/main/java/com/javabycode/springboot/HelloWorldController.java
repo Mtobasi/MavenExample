@@ -14,6 +14,7 @@ public class HelloWorldController
     {
 
         String message = "Spring Boot Example is running successfully";
+
         model.addAttribute("name", name);
         model.addAttribute("message", message);
 
